@@ -20,7 +20,12 @@ body {
 }
 
 .stats-container {
-    display: flex;
+    display: flex; 
+    align-items: center; /* Aligns items vertically */
+}
+.stats-container:hover {
+    cursor: pointer; /* Changes the cursor to a pointer */
+    box-shadow: 0 0 30px lightblue; /* Adds a light blue glow on hover */
 }
 
 .stats-card {
