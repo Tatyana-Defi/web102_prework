@@ -150,16 +150,39 @@ allBtn.addEventListener("click", showAllGames);
  * Skills used: template literals, ternary operator
 */
 
-// grab the description container
+/// Grab the description container
+// Grab the description container
 const descriptionContainer = document.getElementById("description-container");
 
-// use filter or reduce to count the number of unfunded games
+// Use filter to count the number of unfunded games
+const unfundedGamesCount = GAMES_JSON.filter(game => game.pledged < game.goal).length;
 
+// Create a string that explains the number of unfunded games using a ternary operator
+const unfundedGamesText = unfundedGamesCount === 1
+    ? `There is 1 game that has not yet met its funding goal.`
+    : `There are ${unfundedGamesCount} games that have not yet met their funding goals.`;
 
-// create a string that explains the number of unfunded games using the ternary operator
+// Create a new DOM element containing the template string
+const unfundedGamesElement = document.createElement("p");
+unfundedGamesElement.innerText = unfundedGamesText;
 
+// Append the new element to the description container
+descriptionContainer.appendChild(unfundedGamesElement);
 
-// create a new DOM element containing the template string and append it to the description container
+// Create a string using a template literal and ternary operator
+const displayStr = `
+    A total of $${totalRaised.toLocaleString()} has been raised for ${totalGames} games.
+    Currently, ${unfundedGamesCount} ${unfundedGamesCount === 1 ? 'game remains' : 'games remain'} unfunded.
+    We need your help to fund these amazing games!
+`;
+
+// Create a new DOM element containing the template string
+const companyInfoElement = document.createElement("p");
+companyInfoElement.innerText = displayStr;
+
+// Append the new element to the description container
+descriptionContainer.appendChild(companyInfoElement);
+
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
