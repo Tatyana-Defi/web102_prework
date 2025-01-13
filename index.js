@@ -32,10 +32,10 @@ function addGamesToPage(games) {
         // create a new div element, which will become the game card
         const gameCard = document.createElement("div");
 
-        // add the class game-card to the list
+        // add the class game-card to the div's class list
         gameCard.classList.add("game-card");
 
-        // set the inner HTML using a template literal to display some info about each game
+        // set the inner HTML using a template literal to display some info about the game
         gameCard.innerHTML = `
             <img class="game-img" src="${game.img}" alt="${game.name}" />
             <h3>${game.name}</h3>
@@ -45,7 +45,7 @@ function addGamesToPage(games) {
             <p><strong>Backers:</strong> ${game.backers}</p>
         `;
 
-        // append the game to the games-container
+        // append the game card to the games-container
         gamesContainer.appendChild(gameCard);
     }
 }
