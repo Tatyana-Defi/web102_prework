@@ -26,7 +26,8 @@ Here's a walkthrough of implemented features:
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
-<img src='assets/web102_prework.gif' />
+<img src='https://github.com/Tatyana-Defi/web102_prework/raw/main' alt="Sea Monster Crowdfunding GIF" width="300">
+
 ## Notes
 
 Locating Secret keys were very tedious. Slightly made me frustrated. 
