@@ -195,9 +195,19 @@ const secondGameContainer = document.getElementById("second-game");
 const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
     return item2.pledged - item1.pledged;
 });
+// Grab the first and second games using destructuring
+const [firstGame, secondGame, ...rest] = sortedGames;
 
-// use destructuring and the spread operator to grab the first and second games
+// Create a new element to hold the name of the top pledge game
+const firstGameElement = document.createElement("p");
+firstGameElement.innerText = `🏆 ${firstGame.name} raised $${firstGame.pledged.toLocaleString()}`;
 
-// create a new element to hold the name of the top pledge game, then append it to the correct element
+// Append the element to the correct container
+firstGameContainer.appendChild(firstGameElement);
 
-// do the same for the runner up item
+// Create a new element to hold the name of the runner-up game
+const secondGameElement = document.createElement("p");
+secondGameElement.innerText = `🥈 ${secondGame.name} raised $${secondGame.pledged.toLocaleString()}`;
+
+// Append the element to the correct container
+secondGameContainer.appendChild(secondGameElement);
