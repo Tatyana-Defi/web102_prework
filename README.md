@@ -23,7 +23,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='https://github.com/Tatyana-Defi/web102_prework.gif' title='Sea Monster Crowdfunding GIF' width='600' alt='Video Walkthrough' />
+<img src='assets/web102_prework.gif' title='Sea Monster Crowdfunding GIF' width='600' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
