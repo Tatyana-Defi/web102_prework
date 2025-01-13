@@ -99,40 +99,50 @@ gamesCard.innerHTML = `${totalGames}`;
 
 // show only games that do not yet have enough funding
 function filterUnfundedOnly() {
+    // Remove all existing games from the DOM
     deleteChildElements(gamesContainer);
 
-    // use filter() to get a list of games that have not yet met their goal
+    // Use filter() to get a list of games that have not yet met their goal
+    const unfundedGames = GAMES_JSON.filter(game => game.pledged < game.goal);
 
-
-    // use the function we previously created to add the unfunded games to the DOM
-
+    // Use the addGamesToPage function to display the unfunded games
+    addGamesToPage(unfundedGames);
 }
 
-// show only games that are fully funded
 function filterFundedOnly() {
+    // Remove all existing games from the DOM
     deleteChildElements(gamesContainer);
 
-    // use filter() to get a list of games that have met or exceeded their goal
+    // Use filter() to get a list of games that have met or exceeded their goal
+    const fundedGames = GAMES_JSON.filter(game => game.pledged >= game.goal);
 
-
-    // use the function we previously created to add unfunded games to the DOM
-
+    // Use the addGamesToPage function to display the funded games
+    addGamesToPage(fundedGames);
 }
 
 // show all games
 function showAllGames() {
+    // Remove all existing games from the DOM
     deleteChildElements(gamesContainer);
 
-    // add all games from the JSON data to the DOM
-
+    // Use the addGamesToPage function to display all games from the GAMES_JSON array
+    addGamesToPage(GAMES_JSON);
 }
-
 // select each button in the "Our Games" section
 const unfundedBtn = document.getElementById("unfunded-btn");
 const fundedBtn = document.getElementById("funded-btn");
 const allBtn = document.getElementById("all-btn");
 
-// add event listeners with the correct functions to each button
+// Add event listeners to the buttons in the "Our Games" section
+
+// Connect the filterUnfundedOnly function to the unfundedBtn
+unfundedBtn.addEventListener("click", filterUnfundedOnly);
+
+// Connect the filterFundedOnly function to the fundedBtn
+fundedBtn.addEventListener("click", filterFundedOnly);
+
+// Connect the showAllGames function to the allBtn
+allBtn.addEventListener("click", showAllGames);
 
 
 /*************************************************************************************
