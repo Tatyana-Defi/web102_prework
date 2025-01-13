@@ -26,8 +26,7 @@ Here's a walkthrough of implemented features:
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
-<img src='assets/web102_prework.gif' title='Sea Monster Crowdfunding GIF' width='600' alt='Video Walkthrough' />
-
+<img src='assets/web102_prework.gif' />
 ## Notes
 
 Locating Secret keys were very tedious. Slightly made me frustrated. 
