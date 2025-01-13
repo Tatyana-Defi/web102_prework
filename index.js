@@ -212,23 +212,3 @@ secondGameElement.innerText = `🥈 ${secondGame.name} raised $${secondGame.pled
 // Append the element to the correct container
 secondGameContainer.appendChild(secondGameElement);
 
-// Added bonus feature //
-
-// Function to highlight the most recently funded game
-function highlightRecentlyFunded() {
-    // Sort the games by date or any relevant property 
-    const mostRecentGame = GAMES_JSON[GAMES_JSON.length - 1];
-
-    // Find the game in the DOM by its name or unique identifier
-    const games = document.querySelectorAll('.game-card');
-    games.forEach(game => {
-        if (game.innerText.includes(mostRecentGame.name)) {
-            // Add the highlight class
-            game.classList.add('highlight');
-        }
-    });
-}
-
-// Call the function after adding games to the page
-addGamesToPage(GAMES_JSON); // Ensure all games are rendered first
-highlightRecentlyFunded();
