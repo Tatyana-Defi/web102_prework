@@ -44,12 +44,13 @@ function addGamesToPage(games) {
             <p><strong>Pledged:</strong> $${game.pledged.toLocaleString()}</p>
             <p><strong>Backers:</strong> ${game.backers}</p>
         `;
-
-        // append the game card to the games-container
-        gamesContainer.appendChild(gameCard);
+  // Append the game card to the games-container
+  const gamesContainer = document.getElementById("games-container");
+  gamesContainer.appendChild(gameCard);
     }
 }
-
+// Call the function with the correct variable to add all games to the page
+addGamesToPage(GAMES_JSON);
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
 
